@@ -161,7 +161,7 @@ If you use this code, please cite the paper:
 ```bibtex
 @article{2025BFR,
   title={Balance Forgetting and Remembering: An Extension of Machine Unlearning for Policy Updates in Machine Learning-Based Access Control},
-  author={Ningbo Liu, et al.},
+  author={Liu et al.},
   journal={Under Review},
   year={2025}
 }
