@@ -23,9 +23,9 @@ BFR-Policy-Update/
 │   ├── unlearners.py         # Baselines + BFR + SISA
 │   └── puts_factory.py       # Policy Update Task (PUT) generators
 ├── experiments/              # Reproducible experiment entry points
-│   ├── run_main.py           # Main evaluation (AFT curves + runtime)
+│   ├── run_experiment.py     # Main evaluation (AFT curves + runtime)
 │   ├── run_ablation.py       # Ablation study (w/o Forget / w/o Remember / Full)
-│   └── tune_params.py        # Grid search for BFR hyperparameters
+│   └── tune_hyperparams.py   # Grid search for BFR hyperparameters
 ├── data/
 │   ├── raw/                  # Place original datasets here (not included)
 │   └── processed/            # Cleaned/processed datasets (generated)
@@ -84,7 +84,7 @@ All experiments are runnable from the project root.
 Runs BFR and baselines, producing AUC / adaptation accuracy / runtime metrics for AFT analysis.
 
 ```bash
-python experiments/run_main.py
+python experiments/run_experiment.py
 ```
 
 **Outputs**
@@ -111,7 +111,7 @@ python experiments/run_ablation.py
 Searches \(\alpha\) (forgetting rate) and \(\beta\) (retuning rate) by minimizing the selected trade-off objective.
 
 ```bash
-python experiments/tune_params.py --model LR --dataset kaggle
+python experiments/tune_hyperparams.py
 ```
 
 ---
@@ -124,12 +124,6 @@ To help reviewers reproduce results reliably:
 - [ ] Run with a fixed random seed (supported in code via `set_seed(seed)`)
 - [ ] Use the same dataset split (`train_test_split(..., random_state=40)`)
 - [ ] Record device info (CPU/GPU) and PyTorch version
-- [ ] Keep `results/` intact (raw CSVs are the source of plotted figures)
-
-If you publish artifacts, we recommend uploading:
-- `results/*.csv`
-- exact command lines used (or shell script)
-- `pip freeze > environment.lock.txt`
 
 ---
 
@@ -165,9 +159,9 @@ This project is released under the MIT License. See `LICENSE`.
 If you use this code, please cite the paper:
 
 ```bibtex
-@article{Anonymous2025BFR,
+@article{2025BFR,
   title={Balance Forgetting and Remembering: An Extension of Machine Unlearning for Policy Updates in Machine Learning-Based Access Control},
-  author={Anonymous Author(s)},
+  author={Ningbo Liu, et al.},
   journal={Under Review},
   year={2025}
 }
