@@ -254,20 +254,20 @@ def run_ablation_study(num_runs, num_points, sample_num,
     # ==========================
     if base_select == 'LR':
         if data_type == 'kaggle':
-            fr_max = 2.288 * 1.4 * 1.3
-            rr_max = 0.132 * 3 * 1.5 * 1.2
+            fr_max = 4.16
+            rr_max = 1.73
         elif data_type == 'uci':
-            fr_max = 3 * 1.2 * 1.2 
-            rr_max = 1 * 1.5 * 1.1 * 1.1 * 1.2
+            fr_max = 4.53
+            rr_max = 2.39
         else:
             raise ValueError(f"Unsupported data_type: {data_type}")
     else:  # DNN
         if data_type == 'kaggle':
-            fr_max = 0.04 * 2
-            rr_max = 0.014 * 2.5
+            fr_max = 0.04
+            rr_max = 0.014
         elif data_type == 'uci':
-            fr_max = 0.05 * 1.6 * 2.5
-            rr_max = 0.015 * 1.6 * 2.5 
+            fr_max = 0.08
+            rr_max = 0.024 
         else:
             raise ValueError(f"Unsupported data_type: {data_type}")
 
