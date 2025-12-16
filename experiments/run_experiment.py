@@ -212,14 +212,14 @@ def run_comprehensive_evaluation(
     if base_select == 'LR':
         if data_type == 'kaggle':
             fo_tao_max = 40
-            ft_C_max = 0.1404 * 1.3          # S1: 0.1404
-            fr_max = 2.288 * 1.4 * 1.3       # S1: 2.288
-            rr_max = 0.132 * 3 * 1.5 * 1.2   # S1: 0.132
+            ft_C_max = 0.18         
+            fr_max = 4.16
+            rr_max = 1.73
         elif data_type == 'uci':
-            fo_tao_max = 40 * 1.01
-            ft_C_max = 1 * 1.1
-            fr_max = 3 * 1.2 * 1.2 * 1.05
-            rr_max = 1 * 1.5 * 1.1 * 1.1 * 1.2 * 1.1
+            fo_tao_max = 40
+            ft_C_max = 1.1
+            fr_max = 4.53
+            rr_max = 2.39
     elif base_select == 'DNN':
         if data_type == 'kaggle':
             fo_tao_max = 3.5
@@ -229,8 +229,8 @@ def run_comprehensive_evaluation(
         elif data_type == 'uci':
             fo_tao_max = 2.6
             ft_C_max = 0.04
-            fr_max = 0.05 * 1.6             # S1: 0.05; S2: 0.05 * 1.2
-            rr_max = 0.015 * 1.6            # S1: 0.015; S2: 0.015 * 1.5
+            fr_max = 0.08
+            rr_max = 0.024    
 
     linear_values = np.linspace(0, 1, num_points)
     fo_tao_values = np.linspace(0, fo_tao_max, num_points)
